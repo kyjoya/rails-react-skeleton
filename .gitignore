@@ -13,7 +13,17 @@
 !/log/.keep
 !/tmp/.keep
 
-# Ignore Byebug command history file.
+/node_modules
+/yarn-error.log
+
 .byebug_history
-.node_modules
-./coverage
+
+/node_modules
+/app/assets/javascripts/bundle.js
+/react/coverage
+/coverage
+.env
+
+/public/uploads
+
+.DS_Store

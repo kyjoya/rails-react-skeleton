@@ -1,37 +1,39 @@
-source 'https://rubygems.org'
+source 'https://rubygems.org/'
 
-git_source(:github) do |repo_name|
-  repo_name = "#{repo_name}/#{repo_name}" unless repo_name.include?("/")
-  "https://github.com/#{repo_name}.git"
-end
-
-gem 'rails', '~> 5.0.2'
-gem 'pg', '~> 0.18'
-gem 'puma', '~> 3.0'
-gem 'sass-rails', '~> 5.0'
-gem 'uglifier', '>= 1.3.0'
-gem 'foundation-rails'
 gem 'jquery-rails'
-gem 'jbuilder', '~> 2.5'
+gem 'pg', '~> 0.18'
+gem 'carrierwave', '~> 1.0'
 gem 'devise'
-gem 'active_model_serializers', '0.9.3'
-
-group :development, :test do
-  gem 'pry-rails'
-  gem 'rspec-rails'
-  gem 'capybara'
-  gem 'launchy'
-  gem 'factory_girl'
-  gem 'faker'
-  gem 'valid_attribute'
-  gem 'shoulda-matchers', require: false
-end
+gem 'fog'
+gem 'puma', '~> 3.0'
+gem 'rails', '~> 5.1.4'
+gem 'sass-rails', '~> 5.0'
+gem 'factory_bot'
+gem 'uglifier', '>= 1.3.0'
+gem 'compass-rails', github: 'Compass/compass-rails'
 
 group :development do
-  gem 'web-console', '>= 3.3.0'
   gem 'listen', '~> 3.0.5'
   gem 'spring'
   gem 'spring-watcher-listen', '~> 2.0.0'
+end
+
+group :development, :test do
+  gem 'capybara'
+  gem 'coveralls', require: false
+  gem 'factory_bot_rails'
+  gem 'launchy'
+  gem 'pry-rails'
+  gem 'rspec-rails', '~> 3.5'
+  gem 'shoulda'
+  gem 'shoulda-matchers', require: false
+  gem 'rack-test'
+  gem 'valid_attribute'
+  gem 'rails-controller-testing'
+end
+
+group :production do
+  gem 'rails_12factor'
 end
 
 gem 'tzinfo-data', platforms: [:mingw, :mswin, :x64_mingw, :jruby]
